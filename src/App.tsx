@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { NewTaskForm } from './components/NewTaskForm';
+import { ITask } from './models/task';
+import { TaskList } from './components/TaskList';
+import { TaskComponentContainer } from './components/TasksComponentContainer';
 
-const App: React.FC = () => {
+import {hot} from 'react-hot-loader';
+
+const App: React.FC<{ initialTasks?: ITask[]}> = ({initialTasks = [{id: 1, name: "First Task",}]}) => {
+
+  const [tasks, setTasks] = useState(initialTasks);
+
   return (
     <div>
-      <h2>React!</h2>
+      <h2>React! Something </h2>
+      <TaskComponentContainer/>
     </div>
   );
 }
 
-export default App;
+export default hot(module)(App);
