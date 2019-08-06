@@ -1,0 +1,39 @@
+.OMDBSearchComponentContainer {
+    padding: 2px;
+    color: aqua;
+}
+
+.OMDBResultDisplay {
+    background-color: aquamarine;
+    border: 20px;
+}
+
+#movie-search-area {
+    text-align: center;
+    justify-content: center;
+    animation: gradient-flow infinite 20s linear;
+    background-image: linear-gradient(to top left, rgba(50,50,50,30), rgba(180,180,180,80), rgba(240,240,240,95));
+    border-radius: 4px;
+    min-height: 200px;
+}
+
+form {
+    padding: 4px;
+}
+#results-container {
+    justify-content: center;
+    align-items: center;
+    .MuiCard-root {
+        margin: 2px;
+    }
+}
+
+
+@keyframes gradident-flown {
+    from {
+      transform: inte;
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }

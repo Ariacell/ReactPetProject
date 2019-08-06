@@ -1,13 +1,13 @@
 import React, {FunctionComponent} from 'react';
-import {ITask} from '../models/task';
+import {IPlayer} from '../../models/task';
 
 interface IProps{
     onAdd: (event: React.FormEvent<HTMLFormElement>) => void;
     onChange: (event:  React.ChangeEvent<HTMLInputElement>) => void;
-    task: ITask;
+    task: IPlayer;
 }
 
-export const NewTaskForm: FunctionComponent<IProps> = ({
+export const NewPlayerForm: FunctionComponent<IProps> = ({
     onAdd,
     onChange,
     task
@@ -20,6 +20,6 @@ export const NewTaskForm: FunctionComponent<IProps> = ({
     return (
     <form onSubmit={onAddTask}>
         <input onChange={onChange} value={task.name} />
-        <button type="submit">Add a task</button>
+        <button type="submit">Add player!</button>
     </form>
 )}

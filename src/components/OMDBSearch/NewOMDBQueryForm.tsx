@@ -19,7 +19,8 @@ export const NewQueryForm: FunctionComponent<IOMDBQueryFormProps> = ({
 
     return (
         <form onSubmit={onSubmit}>
-            <input name="title" onChange={onChange} value={query.title} />
+            <label htmlFor="title-input" hidden={true}>Title</label>
+            <input id="title-input" name="title" onChange={onChange} value={query.title} />
             <input name="score" onChange={onChange} value={query.score} />
             <button type="submit">GUESS!</button>
         </form>

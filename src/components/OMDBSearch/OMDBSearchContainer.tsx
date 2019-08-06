@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import NewQueryForm from './NewOMDBQueryForm';
 import OMDBResultDisplay from './OMDBResultDisplay';
 import { movieQueryResult } from '../../models/movieQuery';
+import './OMDBStyles.scss';
 
 interface IOMDBSearchContProps {
 
@@ -41,8 +42,8 @@ const OMDBSearchComponentContainer: React.FunctionComponent<IOMDBSearchContProps
     }
 
     return (
-        <div>
-            I am a OMDB Search Component!
+        <div id="movie-search-area">
+            Search for your movie here:
             <NewQueryForm query={query} onSubmitQuery={submitQuery} onChange={onChangeQuery}></NewQueryForm>
             <OMDBResultDisplay title={queryResult? queryResult.title : ''} 
             metascore={queryResult? queryResult.metascore : 0}

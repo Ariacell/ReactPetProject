@@ -1,33 +1,33 @@
-import { ITask } from "../models/task";
+import { IPlayer } from "../../models/task";
 import React from 'react';
 import { Card, CardContent, Button, GridList, GridListTile } from "@material-ui/core";
 
 
 interface IProps {
-    task: ITask;
-    onToggleComplete: (task: ITask) => void;
-    onDelete: (task: ITask) => void;
+    player: IPlayer;
+    onToggleComplete: (task: IPlayer) => void;
+    onDelete: (task: IPlayer) => void;
 }
 
 
 
-export const TaskListItem: React.FunctionComponent<IProps> = ({ task, onToggleComplete, onDelete }) => {
+export const PlayerListItem: React.FunctionComponent<IProps> = ({ player, onToggleComplete, onDelete }) => {
     const onClickComplete = () => {
-        onToggleComplete(task);
-        console.log(task.complete);
+        onToggleComplete(player);
+        console.log(player.complete);
     };
     const onClickDelete = () => {
-        onDelete(task);
+        onDelete(player);
     };
 
     return (
-        <Card className={task.name}>
-            <CardContent style={{ textDecoration: task.complete ? 'line-through' : 'none' }}>
-                <label htmlFor="taskName" id={task.id.toString()}
+        <Card className={player.name}>
+            <CardContent style={{ textDecoration: player.complete ? 'line-through' : 'none' }}>
+                <label htmlFor="taskName" id={player.id.toString()}
                     onClick={onClickComplete}>
-                    <b>#{task.id} </b>
+                    <b>Player# {player.id} </b>
                 </label>
-                Task name: {task.name}
+                {player.name}
                 <GridList cols={2}>
                 <GridListTile>
                         <Button variant="contained" onClick={onClickComplete} color="primary" >Complete Task</Button>
