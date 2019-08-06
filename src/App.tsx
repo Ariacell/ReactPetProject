@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
-import { NewTaskForm } from './components/NewTaskForm';
 import { ITask } from './models/task';
-import { TaskList } from './components/TaskList';
 import { TaskComponentContainer } from './components/TasksComponentContainer';
 
 import {hot} from 'react-hot-loader';
+import OMDBSearchComponentContainer from './components/OMDBSearch/OMDBSearchContainer';
 
 const App: React.FC<{ initialTasks?: ITask[]}> = ({initialTasks = [{id: 1, name: "First Task",}]}) => {
 
-  const [tasks, setTasks] = useState(initialTasks);
+  // const [] = useState(initialTasks);
 
   return (
-    <div>
-      <h2>React! Something </h2>
+    <div >
+      <h2>React!</h2>
       <TaskComponentContainer/>
+      <OMDBSearchComponentContainer/>
     </div>
   );
 }
