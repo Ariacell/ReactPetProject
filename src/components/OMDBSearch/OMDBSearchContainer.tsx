@@ -34,7 +34,8 @@ const OMDBSearchComponentContainer: React.FunctionComponent<IOMDBSearchContProps
             .then((data) => {
                 setQueryResult({
                     title: data.Title, releaseDate: data.Released,
-                    metascore: data.Metascore, userScore: query.score
+                    metascore: data.Metascore, userScore: query.score,
+                    plot: data.Plot
                 })
             })
             .catch(console.log)
@@ -48,7 +49,8 @@ const OMDBSearchComponentContainer: React.FunctionComponent<IOMDBSearchContProps
             <OMDBResultDisplay title={queryResult? queryResult.title : ''} 
             metascore={queryResult? queryResult.metascore : 0}
             userScore={queryResult? queryResult.userScore : 0}
-            releaseDate={queryResult? queryResult.releaseDate : 'N/A'} />
+            releaseDate={queryResult? queryResult.releaseDate : 'N/A'}
+            plot={queryResult? queryResult.plot: 'N/A'} />
         </div>
     )
 }

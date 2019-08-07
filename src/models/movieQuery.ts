@@ -13,4 +13,5 @@ export interface movieQueryResult {
     // }],
     metascore: number,
     userScore: number,
+    plot: string
 }
